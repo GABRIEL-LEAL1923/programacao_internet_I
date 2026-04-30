@@ -1,0 +1,207 @@
+<!-- ESTE É UM ARQUIVO DE HTML -->
+<!-- HTML RESUMO CAP_02-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+	 <title> ESTRUTURANDO PÁGINAS HTML </title>
+	</head>
+	<body>
+		<h1> <b> ESTRUTURA BÁSICA PADRÃO DE PÁGINA HTML </b> </h1>
+<p> Não sendo complexa uma página .html é estruturada de maneira simples, abaixo um padrão mínimo 
+usado para criar uma página .html na web.
+</p>
+<pre>
+<code>
+&lt;!DOCTYPE html&gt; *usado para definir o tipo da página
+&lt;html&gt;  *define página web .html 
+&lt;head&gt;  *define neste escopo metadados ou dados de configurações para o navegador 
+    &lt;title&gt;Primeira página&lt;/title&gt; *define o título da página na web
+&lt;/head&gt; *fecha o escopo de configuração de metadados para o navegador 
+&lt;body&gt; *corpo da página web
+
+    &lt;h1&gt;Título do site&lt;/h1&gt; *titulo da página web (conteúdo)
+    &lt;h1&gt;Olá, web!&lt;/h1&gt; *h1 é para titulos grandes 
+    &lt;p&gt;site 0.1&lt;/p&gt; *esta tag que circula site 0.1 define os paragrafos
+    &lt;b&gt;negrito&lt;/b&gt; *define uma frase ou texto em negrito 
+
+&lt;/body&gt; *fecha o corpo da página web 
+&lt;/html&gt; *fecha a definição da página web 
+<p> *NOTA: note que ao fechar as tags usam uma " / " (barra).
+</code>
+</pre>
+<br>
+	<h2> Parametizando elementos por atributos (Links de exemplos) </h2>
+<p> A ação de parametizar elementos por links é uma forma de deixar links clicaveis
+e assim garantir que estes links direcionem o usuário para uma página web seja interna
+ou externa. 
+Exemplo abaixo: </p>
+<pre>
+<code>
+&lt;h1&gt;
+    &lt;a href="https://www.uol.com.br"&gt;+Informações Clique aqui&lt;/a&gt;
+&lt;/h1&gt;
+
+< a = âncora que define o escopo do link e seu texto 
+href = referência (URL da página) 
+"https://www.uol.com.br" = endereço URL da página desejada]
+</code>
+</pre>
+
+
+		<h2> HTML na Criação de listas</h2>
+<p> As listas em html tem muito valor, por exemplo na listagem de dados sobre compras para o usuário
+em uma loja virtual, uma lista dos primeiros colocados em um evento que foi públicado na web, além de 
+muitas outras milhares de aplicações.
+Abaixo estão os tipos de listas usados em html </p>
+<pre>
+<code>
+ORDENADAS (COM ORDEM): Usadas em ordem para elementos listados em ordem.
+
+&lt;ol&gt; *esta tag diz "ordered list" ordenação de lista 
+    &lt;li&gt;primeiro&lt;/li&gt; *esta tag que circula o nome primeiro diz item de lista "list item" por isto li
+    &lt;li&gts;segundo&lt;/li&gt;
+    &lt;li&gt;terceiro&lt;/li&gt;
+&lt;/ol&gt;
+
+
+NÃO ORDENADAS (SEM ORDEM): É uma  lista mais não esta em ordem, imagine uma lista de compras por exemplo
+
+&lt;ul&gt; esta tag diz *"unodered list" lista não ordenada
+    &lt;li&gt;maçã&lt;/li&gt; *da mesma forma o li representa lista de itens
+    &lt;li&gt;pera&lt;/li&gt;
+    &lt;li&gt;alface&lt;/li&gt;
+&lt;/ul&gt;
+
+
+LISTA DE DESCRIÇÃO (TERMO + DESCRIÇÃO): Estas são listas que possuem títulos + descrição em baixo
+
+&lt;dl&gt; *elemento tag que cria este tipo de lista "desfinition list"
+    &lt;dt&gt;CSS&lt;/dt&gt; *a tag dt diz "definition de term" ou seja definição de termo "título" da lista a ser descrita
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt; *tag que diz "definition description" definição do termo descrito 
+
+outro exemplo: 
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Linguagem de marcação de texto&lt;/dd&gt;
+&lt;/dl&gt;
+</code>
+</pre>
+
+
+DEFINIÇÃO DE LISTAS ANINHADAS:
+<p> Váriação de lista que define listas com seus títulos e grupos, uma especie de agrupamento,
+veja o padrão e compare com as demais listas acima </p>
+<pre>
+<code>
+&lt;ul&gt;
+    &lt;li&gt;
+        FRUTAS:
+        &lt;ul&gt;
+            &lt;li&gt;maçã&lt;/li&gt;
+            &lt;li&gt;laranja&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        VEGETAIS:
+        &lt;ul&gt;
+            &lt;li&gt;alface&lt;/li&gt;
+            &lt;li&gt;coentro&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+
+<p> *Nota: Note que as listas sempre como todos os padrões .html iniciam com tag de início
+e finalizam com tags geralmente identificadas com " / " (barra). 
+<br>
+<h2> DEFINIÇÃO DE LINKS </h2>
+
+<pre>
+<code>
+LINKS EXTERNOS: Links que direcionam para outros sites.
+
+&lt;a href="https://www.uol.com.br"&gt;Página do UOL&lt;/a&gt;
+
+ Abre um site fora da página atual.
+
+
+LINKS INTERNOS: Levam o usuário para dentro do próprio site, mais especificamente para uma 
+determinada parte especifica.
+
+&lt;a href="#cap_01"&gt;Capítulo 01&lt;/a&gt;
+
+&lt;h2 id="cap_01"&gt;Página inicial&lt;/h2&gt;
+
+ Leva o usuário para uma parte da mesma página.
+
+LINKS RELATIVOS: Levam para outras páginas dentro do mesmo website.
+
+*Exemplo de página .html com link relativo a uma página no mesmo website.
+
+&lt;a href="index.html"&gt;Página Inicial&lt;/a&gt;
+
+&lt;a href="about.html"&gt;Sobre HTML&lt;/a&gt;
+
+INCLUSÃO DE IMAGENS: Inclue imagens na página web.
+
+&lt;img src="images/profile.jpg" 
+     alt="Meu arquivo"
+     title="Este é o arquivo WA"&gt; 
+
+ src = caminho da imagem  
+ alt = texto alternativo  "Plano B"
+ title = título da imagem  
+
+</code>
+</pre>
+
+<h2> ESTRUTURA DE TABELAS </h2>
+<p> Dados em tabelas são distruibuidos em linhas e colunas. </p>
+<pre>
+<code>
+
+&lt;table&gt; *define a tabela
+
+    &lt;tr&gt; *define as linhas
+        &lt;th&gt;Primeiro Nome&lt;/th&gt;
+        &lt;th&gt;Segundo Nome&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt; 
+        &lt;td&gt;Riana&lt;/td&gt; *define as colunas
+        &lt;td&gt;João&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+
+*NOTA: Teste as tags no W3Schools.
+</code>
+</pre>
+
+<h2> OUTROS ELEMENTOS ÚTEIS </h2>
+<p> Existem outros demais elementos que podem ser ultilizados para ajustes nas páginas web
+são eles:
+<pre>
+<code>
+&lt;strong&gt;	*Texto importante
+&lt;em&gt;	*ênfase
+&lt;code&gt;	*código de programação
+&lt;mark&gt;	*destaque
+&lt;small&gt;	*texto menor
+&lt;pre&gt;	*texto pré-formatado
+&lt;q&gt;	*citação curta
+&lt;blockquote&gt;	*citação longa
+&lt;br&gt;	*quebra de linha
+&lt;header;&gt;	  *cabeçalho da página ou seção
+&lt;footer;&gt;  *rodapé
+
+*NOTA: Existem várias outras inúmeras tags estás são as básicas outras tags são usadas
+para outras formatações, para visualiza-las acesse o site W3 SCHOOLS ou a documentação
+oficial do HTML5.
+</code>
+</pre>
+	
+</body>
+</html>
