@@ -1,0 +1,354 @@
+<!DOCTYPE html>                    
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>RESUMO CÁPITULO 03 CSS/CONCEITOS BÁSICOS</title>
+        
+        <style>
+            body{
+                font-family: arial;
+                line-height:1.6;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f4f7f6;
+                color: #333;
+            }
+            h1, h2, h3 { color: #2c3e50;}
+            h1{ text-align: center;}
+            
+            div{
+                background: #ffffff;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 6px;
+                box-shadow: 0 2px 5px rgb(222, 222, 242);
+                
+                }
+                
+                pre{
+                    background: #2d3748;
+                    color: #ffffff;
+                    padding: 15px;
+                    border-radius: 4px;
+                    overflow-x: auto;
+                    font-family: monospace;
+                    
+                }
+            
+        </style>
+    </head>
+<body>
+        
+    <h1>INTRODUÇÃO E PRINCÍPIOS DE CSS</h1>
+    <br>
+    <p> <b>CSS</b> define o layout e o design de páginas html. Ele é usado na maioria dos sistemas da web atuais.
+    CSS = <i>Cascade Style Sheets</i> tem cores definidas por padrão RGB/HEXADÉCIMAL. <b>A seguir veremos as aplicações de CSS e determinados estilos.</b></p>
+    
+    <h2>LINKAGEM DE PÁGINAS HTML COM CSS</h2>
+    <p>Processo que liga css ao HTML, sendo possível fazer diretamente (interno), externo ou embutido no arquivo.html. Este processo abaixo fixa 2 arquivos, mais específicamente um .CSS dentro de um .HTML para assim dá vida ao texto HTML, sendo feito um arquivo.css and um arquivo.html, fixando ele junto do arquivo.html no ínicio &lt;head/&gt;</p>
+    
+    <div>
+        <h3>CSS EXTERNO</h3>
+        <p><b>Há o processo que liga CSS e HTML de modo externo sendo este fixado em um arquivo.css.</b></p>
+        <pre><code>&lt;link href="css/styles.css" type="text/css" rel="stylesheet"/&gt;</code></pre>
+    </div>
+        
+    <h3>CSS EMBUTIDO</h3>
+    <p><b>Já o CSS embutido fixa-o por meio de código em conjunto com o HTML.</b></p>
+    <p>Exemplo linkagem html externas:</p>
+    
+    <div class="Tabela_um">
+        <label for="l_externo">Exemplo linkagem html externas:</label>
+        <pre>
+<code> 
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemplo CSS Embutido&lt;/title&gt;
+
+    &lt;style&gt;
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .caixa {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .caixa:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class="caixa"&gt;
+        Exemplo de CSS embutido no HTML
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+        </pre>
+    </div>
+        
+    <h2>CSS INTERNO</h2>
+    <p>É usado dentro das linhas do html, sendo sua principal caracteristica o uso do &lt;style/&gt;</p>
+    <h3> </h3>
+    <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;JavaScript Interno&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1 id="titulo"&gt;Olá Mundo&lt;/h1>
+
+    &lt;script&gt;
+        const titulo = document.getElementById("titulo");
+
+        titulo.style.color = "blue";
+
+        titulo.innerHTML = "Texto alterado com JavaScript interno!";
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>Cada tipo de criação e aplicação de arquivos CSS depende de sua aplicação:</p>
+    <p>Linkagem externa é usado na maioria dos casos facilita o uso e manutenção do código</p>
+    <p>Linkagem interna, aplica-se a páginas que não mudam ou são páginas de anúncios, de restrição "Algo que mantém padrão"</p>
+    <p>linkagem embutida é usada em testes e aplicações de emergência como emails marketing e aplicações pequenas e que não alteram</p>
+
+    <h2>SELETORES EM CSS</h2>
+    <p>Existem diversos tipos de seletores mais listaremos os principais</p>
+    
+    <h3>Seletor de tipo</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;input {
+    collor: greem
+}/&gt;</code></pre>
+            <p>O elemento primeiro "input", pega o texto na cor atribuida, o mesmo pode ser feito em títulos e subtítulos</p>
+        </label>
+    </div>
+     
+    <h3>Seletor de classe</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;.valid {
+    collor: greem
+}/&gt;</code></pre>
+            <p>Aplica-se a classe desejada e espécificada</p>
+        </label>
+    </div>
+        
+    <h3>Seletor universal</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;* {
+    collor: blue
+}/&gt;</code></pre>
+            <p>aplica-se a universalidade dos elements (todos)</p>
+        </label>
+    </div>
+        
+    <h3>Seletor ID</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;#start {
+    collor: blue
+}/&gt;</code></pre>
+            <p>aplica-se ao elemento espécificado pelo seu ID</p>
+        </label>
+    </div>
+
+    <h3>Seletor de atributos</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;input[type= "text"] {
+    collor: blue
+}/&gt;</code></pre>
+            <p>aplica-se ao atributo especificado podendo</p>
+        </label>
+    </div>
+        
+    <h3>Seletor de silabas</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;h2 ~ p {
+    collor: black
+}/&gt;</code></pre>
+            <p>aplica-se aos elementos vindos depois do elemento citado no caso acima o p=parágrafo</p>
+        </label>
+    </div>
+
+    <h3>Seletor estilizador</h3>
+    <div class="seletores">
+        <label for="selector">:
+            <pre><code>&lt;a[href$=" .pdf"] {
+    collor: red
+}/&gt;</code></pre>
+            <p>aplica-se aos elementos citados de modo geral</p>
+        </label>
+    </div>
+        
+    <h2>HERANÇA EM CSS</h2>
+    <P>Herança em CSS ocorre quando um elemento herda uma 'tag' específica em seu escopo, por exemplo a especificação de cores (collor) e ou uma fonte (font-family) para o elemento body (corpo, escopo) todos os elementos "fontes" e "cores" serão adotados dentro de body. Há alguns elementos que não podem ser herdados, eles são elementos que são "privados", ou seja não são regras que podem ser aplicadas de modo geral mais específico, isto por exemplo pode ser aplicado a uma borda que não é geral mais especifica de uma parte do escopo da página.</P>
+     
+    <h2>APLICAÇÕES CSS NO DESIGN DE PÁGINAS</h2>
+    <p>VALORES RGB: Este padrão de cores é muito usado em aparelhos eletrônicos, é uma mistura de R (red), G (greem), B (blue). Cada componente é descrito de números indo deste o 0 ao 255 no seguinte padrão rgb(255, 255, 255), este mesmo padrão pode formar todas as outras cores e suas variáções</p>
+    <p>VALORES HEXADÉCIMAIS(HEX): São cores representadas pelos números hexadécimais (um valor de 6 dígitos), um exemplo é o amarelo representado pelo hexadécimal #ffff00 ou o branco representado pelo hexadécimal #ffffff.</p>
+    <p>NOMES DE CORES EM INGLÊS: Representa-se o nome das cores em inglês por exemplo yellow para amarelo, blue para azul, além de varias outras cores.</p>
+    <p>VALORES RGBA: Desde a atualização do CSS3 é possível definir a opacidade da cor aplicada no RGB por exemplo usa-se a conotação 0.0 de transparete a 1.0 que é totalmente opaco, um exemplo de um amarelo com 50% de opacidade seria rgba(255, 255, 0, 0.5).</p>
+    <p>VALORES HSL: Há também desde o CSS 3 o uso da cor com base na matriz, por exemplo hsl(60,100%,50%) que é o amarelo ,definido pela matriz (hue), saturação (saturation) e luminosidade (lighness).</p>
+    <p>VALORES HSLA: Semelhante ao RGBA, adiciona opacidade ao valor HSL acrescentando um quarto número, por exemplo o amarelo com 50% de opacidade seria hsla(60,100%,50%,0.5).</p>
+     
+     <h3> DEFINIÇÃO DE FONTES E TAMANHOS</h3>
+     <p>Fonte é definida em CSS por (font-family) este define fonte, específicada pelo desenvolvedor. Opcionalmente deve-se especificar várias fontes separadas por vírgula para caso o navegador não consiga carregar uma, outras alternatvas estão a disposição. <b>Abaixo exemplos de aplicação de fontes em diferentes casos (Para mais informações visite o site)-></b><a href="https://www.w3schools.com/css/css_font.asp"></a>Tutorial de fontes CSS</p>
+     
+<pre><code>
+&lt;style&gt;
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h1, h2 {
+  font-family: Arial, sans-serif;
+}
+
+ul li {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.author {
+  font-family: Verdana;
+}
+
+.date {
+  font-family: 'Courier New', Courier, monospace;
+}
+&lt;/style&gt;
+</code></pre>
+
+<p>
+<b>
+Ajustes no tamanho da fonte são feitos sob "px" - pixels,
+"%" - porcentagem, ou "em" - unidade para tamanho de fontes.
+</b>
+</p>
+
+<pre><code>
+&lt;style&gt;
+body {
+
+  /* font size of 14 pixels */
+  font-size: 14px;
+}
+
+h1 {
+
+  /* 150% of the regular font size */
+  font-size: 150%;
+}
+
+h2 {
+
+  /* 1.5 times the width of the letter m */
+  font-size: 1.5em;
+}
+&lt;/style&gt;
+</code></pre>
+
+<p>
+Ajuste de fonte por estilo, é muito usado em itálico e negrito
+</p>
+
+<pre><code>
+&lt;style&gt;
+.introduction {
+
+  /* italico */
+  font-style: italic;
+
+  /* Bold font */
+  font-weight: bold;
+}
+&lt;/style&gt;
+</code></pre>
+<p><i>*Exemplos tirados do cápitulo 3 do livro da disciplina programação para internet I</i></p>
+<p>Para mais aprendizado sobre itens básicos essênciais de CSS <a href="https://www.w3schools.com/css/">Básico de CSS</a></p>
+<br>
+
+<h2>LAYOUT E BASE DE SITES CSS</h2>
+<p>Com CSS podemos posicionar elementos html e assim criar a estrutura de um layout por exemplo de um site, pois este constitui de vários blocos que quando possicionados fazem um site ter sua estrutura.
+A princípio o html distingue elementos em nível de bloco e elementos em nível de linhas, estes por sua vez quando fixados com a propriedade CSS "display" tem a possibilidade de personalizar o comportamento em relação ao fluxo de texto. "block" garante que o html seja considerado no layout nível bloco, já "inline" personaliza para que o elemento seja considerado nível de linha.</p>
+<p><b>OS elementos podem ser formatados:</b></p>
+<p>POSICIONAMENTO ESTÁTICO: "static" -Os elementos são posicionados conforme o fluxo do texto html</p>
+<p>POSICIONAMENTO RELATIVO: "relative" -Os elementos são posicionados de forma relativa para cima, para direita, ou com base no fluxo normal</p>
+<p>POSICIONAMENTO ABSOLUTO: "absolute" - Os elementos são removidos do fluxo normal e posicionados em relação ao elemento pai.</p>
+<p>POSICIONAMENTO FIXO: "fixed" -Os elementos são posicionados em relação à janela do navegador (também chamada de viewport).</p>
+<p>POSICIONAMENTO COLADO: "sticky" -Os elementos se comportam de forma semelhante ao posicionamento fixo em termos de posicionamento, mas rolam apenas até um ponto especificado e depois permanecem fixos na viewport.</p>
+<p>POSICIONAMENTO HERDADO: "inherit"-Neste caso, o comportamento de posicionamento é herdado do elemento pai.</p>
+<h3>PRINCÍPIO DO LAYOUT FLOAT</h3>
+<p>Você pode usar o layout flutuante (float layout) para influenciar o comportamento dos elementos em relação ao fluxo do texto. A propriedade CSS correspondente float pode ser usada para fixar elementos na margem esquerda ou direita do bloco HTML delimitador. Por muito tempo, o layout float foi a escolha principal para organizar elementos. Agora, no entanto, você tem duas alternativas o layout <b>flexbox</b> e o <b>layout grid</b> a seguir iremos tratar do layout grid</p>
+<br>
+<p><b>No layout grid</b> os elementos individuais organizados usando o layout grid podem, portanto, ser dispostos em duas dimensões em vez de apenas uma, como ocorre com o layout flexbox, tornando muito mais fácil a implementação de layouts complexos.
+ALGUMAS DEFINIÇÕES: 
+grid-template-columns (Contêiner Grid): Define o número e o tamanho das colunas do grid.
+grid-template-rows (Contêiner Grid): Define o número e o tamanho das linhas do grid.
+grid-auto-columns (Contêiner Grid): Define o número e o tamanho das colunas criadas automaticamente no grid.
+grid-auto-rows (Contêiner Grid): Define o número e o tamanho das linhas criadas automaticamente no grid.
+grid-auto-flow (Contêiner Grid): Define como os elementos posicionados automaticamente "fluem" dentro do grid.
+grid-template-areas (Contêiner Grid): Define a estrutura e a posição dos elementos do grid definidos via grid-area.
+grid-template (Contêiner Grid): Propriedade abreviada para grid-template-areas, grid-template-columns e grid-template-rows.
+grid (Contêiner Grid): Propriedade abreviada para grid-auto-columns, grid-auto-flow, grid-auto-rows e grid-template.
+
+POSICIONAMENTOS:
+
+grid-row-start (Item Grid): Define o início vertical de uma área do grid.
+grid-column-start (Item Grid): Define o início horizontal de uma área do grid.
+grid-row-end (Item Grid): Define o final vertical de uma área do grid.
+grid-column-end (Item Grid): Define o final horizontal de uma área do grid.
+grid-row (Item Grid): Propriedade abreviada para grid-row-start e grid-row-end.
+grid-column (Item Grid): Propriedade abreviada para grid-column-start e grid-column-end.
+grid-area (Item Grid): Propriedade abreviada para grid-row e grid-column.</p>
+
+ALINHAMENTO: 
+
+justify-self (Item Grid): Define o alinhamento de um item do grid dentro de sua célula.
+justify-items (Contêiner Grid): Define o alinhamento de todos os itens do grid dentro de suas respectivas células ao longo do eixo horizontal.
+align-self (Item Grid): Define para um item do grid como ele é posicionado ao longo do eixo transversal.
+align-items (Contêiner Grid): Define para um contêiner grid como os itens individuais são posicionados ao longo do eixo transversal.
+justify-content (Contêiner Grid): Define a distribuição do espaço ao longo do eixo principal.
+align-content (Contêiner Grid): Define a distribuição do espaço ao longo do eixo transversal (o eixo definido como o que não é o eixo principal).
+
+ESPAÇAMENTO:
+
+row-gap (Contêiner Grid): Define as distâncias entre as linhas individuais de um grid.
+column-gap (Contêiner Grid): Define as distâncias entre as colunas individuais de um grid.
+gap (Contêiner Grid): Propriedade abreviada para row-gap e column-gap.
+</p>
+<p> *PARA EXEMPLO DE LAYOUT GRID ACCESSE: <a href= "https://www.w3schools.com/css/css_grid.asp">layout grid CSS</a></p>
+</body>
+</html>
