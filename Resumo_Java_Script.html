@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>RESUMO_JAVA_SCRIPT</title>
+
+
+
+        <style>
+
+            body{
+                font-family: arial;
+                line-height: 1.6;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #E6FFFA;
+                color: #0F2E2A;
+                }
+
+            h1, h2, h3, h4 {color: #0E8F6B;}
+
+            h1{ text-align: center;}
+
+            div{
+             background: #FFFFFF;
+             padding: 20px;
+             margin: 20px 0;
+             border-radius: 6px;
+             box-shadow: 0 2px 5px rgba(20, 199, 154, 0.25);
+            }
+
+            pre{
+            background: #0F2E2A;
+            color: #E6FFFA;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            }
+
+        </style>
+
+    </head>
+
+<body>
+        <h1>JAVASCRIPT</h1>
+
+        <br>
+
+        <p>O JavaScript é uma linguagem de programação conhecida como linguagem da web, pois é através desta linguagem que as páginas web se tornam interativas e se tornam "clicáveis", sendo assim veremos tudo o que você Desenvolvedor precisa fazer para desenvolver páginas web com <b>JavaScript</b></p>
+
+
+
+<div>
+
+<h2>Estruturas para desenvolvimento</h2>
+
+
+
+<p>As páginas web têm sua estrutura dividida em pastas, sendo uma pasta geral para o projeto: pasta index.html para arquivos .html; pasta chamada scripts com o main.js, para funções e interações com JavaScript</p>
+
+<p> <b>A seguir uma simples estrutura contendo o html e JavaScript, para adicionar CSS basta adicionar uma pasta chamada styles com o arquivo em .css</b>
+
+<br>
+
+projeto
+
+├── index.html
+
+└── scripts
+
+    └── main.js
+
+</p>
+
+
+
+</div>
+
+<div>
+
+        <h3>Integração de um arquivo JavaScript ao html</h3>
+
+        <p>Para integração entre JavaScript e html deve-se adicionar o elemento html <b>&lt;script&gt;</b> usando o atributo <b>&lt;src&gt;</b> para especificar a URL (caminho) do arquivo JavaScript que desejo integrar.</p>
+
+
+
+<pre>
+
+<code>
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head lang="pt-br"&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;title&gt;Exemplo&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="styles/main.css" type="text/css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script src="scripts/main.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code>
+
+</pre>
+
+</div>
+
+
+
+<div>
+
+        <h3>Definindo JavaScript diretamente sem HTML</h3>
+
+<p>Esta abordagem geralmente não é recomendada pelo excesso de linhas e bagunça no código, mas de uma maneira simples. Para definir o JavaScript sem o HTML, não se usa o src como no tópico anterior. Usa-se o elemento &lt;script&gt; também para definir internamente como o exemplo abaixo onde será impresso um Olá mundo.</p>
+
+
+
+<pre>
+
+<code>
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head lang="en"&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;title&gt;Example&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="styles/main.css" type="text/css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+
+        alert('Hello World');
+
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code>
+
+</pre>
+
+        <mark>Esta definição somente é aplicada em casos excepcionais</mark>
+
+        <p><b>Ainda há o elemento &lt;noscript&gt; que é usado quando o navegador não suporta JavaScript</b></p>
+
+
+
+<pre>
+
+<code>
+
+&lt;noscript&gt;
+
+    Conteúdo alternativo para usuários sem JavaScript.
+
+&lt;/noscript&gt;
+
+</code>
+
+</pre>
+
+
+
+</div>
+
+
+
+<div>
+
+        <h3>Console do Desenvolvedor</h3>
+
+        <p>O console do desenvolvedor faz parte das ferramentas do navegador e permite visualizar erros, testar códigos e manipular páginas em tempo real.</p>
+
+<p>Em algumas plataformas para abri-lo usa-se os seguintes passos:</p>
+
+<p>Chrome: Exibir -> Desenvolvedor -> Console JavaScript</p>
+
+<p>Firefox: Ferramentas -> Desenvolvedor Web -> Console Web</p>
+
+<p>Safari: Desenvolvedor -> Mostrar Console de Erros</p>
+
+<p>Em versões atuais do Safari, primeiro é necessário habilitar o menu Desenvolvedor em Preferências -> Avançado.</p>
+
+<p>Opera: Desenvolvedor -> Ferramentas do Desenvolvedor -> Aba Console</p>
+
+<p>Microsoft Edge: pressione F12 ou acesse Outras Ferramentas -> Ferramentas de Desenvolvimento</p>
+
+
+
+<br>
+
+<p>Os navegadores disponibilizam um objeto chamado console, que possui vários métodos para exibir mensagens. Por exemplo, você pode usar o método log() para enviar uma mensagem simples ao console.</p>
+
+
+
+<pre>
+
+<code>
+
+console.log('Olá Mundo do Desenvolvedor');
+
+</code>
+
+</pre>
+
+
+
+<p>Sendo a mensagem: <b>Olá Mundo do Desenvolvedor</b> impressa</p>
+
+<br>
+
+
+
+<p>Métodos do console</p>
+
+<pre>
+
+<code>
+
+console.log('Olá Mundo do Desenvolvedor');
+
+// Exibe uma mensagem normal
+
+
+
+console.debug('Olá Mundo do Desenvolvedor');
+
+// Exibe uma mensagem de depuração
+
+
+
+console.error('Olá Mundo do Desenvolvedor');
+
+// Exibe uma mensagem de erro
+
+
+
+console.info('Olá Mundo do Desenvolvedor');
+
+// Exibe uma mensagem informativa
+
+
+
+console.warn('Olá Mundo do Desenvolvedor');
+
+// Exibe uma mensagem de aviso
+
+</code>
+
+</pre>
+
+
+
+<p>Há outros métodos como o <b>clear()</b> que limpa as mensagens exibidas no console; <b>debug()</b> exibe a mensagem apenas quando o nível de depuração (debug) está habilitado; <b>error()</b> exibe uma mensagem de erro. A maioria dos navegadores mostra um ícone de erro ao lado da mensagem; <b>info()</b> exibe uma mensagem informativa no console; <b>log()</b> exibe uma mensagem comum no console; <b>warn()</b> exibe uma mensagem de aviso. Normalmente é acompanhada por um ícone de alerta.</p>
+
+
+
+</div>
+
+
+
+        <h3>APRENDENDO <b>JAVASCRIPT</b></h3>
+
+        <p>Aprenderemos conceitos chaves para programar na web usando JavaScript, cada conceito é útil para fazer aplicações desde simples a avançadas.</p>
+
+
+
+<div>
+
+      <h4>Variáveis</h4>
+
+       <p>Como as demais linguagens de programação as variáveis são "espaços" na memória onde valores são armazenados e a partir daí manipulados conforme o objetivo do programa. A declaração de variáveis está baseada no <b>let</b> para valores que podem ser modificados ao longo do tempo. JavaScript é uma linguagem dinamicamente tipada, ou seja a mesma regra de variável <b>let</b> define strings, float, int e double, semelhante ao Python. <b>let</b> define a regra de escopo, ou visibilidade da variável.</p>
+
+        <ul>
+
+            <li>let Nome; // Declaração de variável</li>
+
+            <li>Nome = 'João'; // Inicialização da variável</li>
+
+            <li>let Nome = 'João'; // pode-se declarar na mesma linha</li>
+
+            <li>// Imprimir variável console.log(Nome); // Resultado João</li>
+
+        </ul>
+
+<p>Existem também as constantes que são variáveis que uma vez declaradas com <b>const</b> não podem mudar.
+
+exemplo: <b>const MAX = 500;</b></p>
+
+</div>
+
+
+
+<div>       
+
+         <h4>Tipos de Dados</h4>
+
+        <p>JavaScript fornece vários tipos diferentes de dados, cada tipo de dado serve para um propósito diferente.</p>
+
+<dl>  
+        <dt>Dados Numéricos</dt>
+
+        <dd>const num1 = 5;  // definição de um número inteiro</dd>
+
+        <dd>const num2 = 0.5;  // definição de um número decimal</dd>
+
+        <dd>const num3 = -22;    // definição de um inteiro negativo</dd>
+
+        <dd>const num4 = -0.9;   // definição de um decimal negativo</dd>
+
+        <p><b>Também pode-se declarar em "let"</b></p>
+</dl>
+
+
+
+<dl>
+
+        <dt>Strings</dt>
+
+        <p>Representam uma cadeia de caracteres, letras ou números, de forma simples é texto</p>
+
+        <dd>const primeiroNome = 'John';  // aspas simples</dd>
+
+        <dd>const segundoNome = "Doe";  // aspas duplas</dd>
+
+        <dd>const idade = "22";   // não é um número, mas uma string</dd>
+
+        <dd>const cidade = 'São paulo"; // erro de sintaxe: aspas misturadas</dd>
+
+</dl>
+
+
+
+<p>Uma boa prática em JavaScript é utilizar a palavra-chave const para todos os valores que não mudam. Estritamente falando, esses valores deixam de ser variáveis e passam a ser constantes.</p>
+
+
+
+<dl>
+
+        <dt>Valores booleanos</dt>
+
+        <p>Assumem apenas valores True (verdadeiro) e False (falso)</p>
+
+        <dd>let cliente = true;</dd>
+
+        <dd>let adm = false;</dd>
+
+</dl>
+
+
+
+<p>JavaScript também possui vários outros tipos de dados, entre eles podemos citar o <b>undefined</b> que indica que uma variável foi criada e nenhum tipo de valor foi atribuído a ela; temos o <b>null</b> que representa a ausência intencional de um valor ou objeto; há o <b>BigInt</b> usado para representar números inteiros extremamente grandes, que ultrapassam o limite seguro do tipo number; temos o <b>Symbol</b> que cria um identificador único e imutável, muito utilizado para evitar conflitos de nomes em propriedades de objetos. Há também o tipo de dados complexo ou estrutural que neste caso é o <b>object</b>, que é um bloco de construção fundamental para dados complexos em JavaScript. Inclui estruturas como Objetos, Arrays (listas) e Funções.</p>
+
+</div>
+
+
+
+<div>
+
+        <h4>Operadores</h4>
+
+<dl>
+
+        <dt>Operadores aritméticos</dt>
+
+        <dd>Adição +</dd>
+
+        <dd>Subtração -</dd>
+
+        <dd>Multiplicação *</dd>
+
+        <dd>Divisão /</dd>
+
+        <dd>Resto de uma divisão %</dd>
+
+        <dd>Incremento ++</dd>
+
+        <dd>Decremento --</dd>
+
+        <dd>Exponenciação **</dd>
+
+        <dd>Atribuição =</dd>
+
+</dl>
+
+<dl>
+
+        <dt>Operadores lógicos</dt>
+
+        <dd>AND &&</dd>
+
+        <dd>OR ||</dd>
+
+        <dd>NEGAÇÃO !</dd>
+
+</dl>
+
+<dl>
+
+        <dt>Operadores de comparação</dt>
+
+        <dd>Menor que &lt;</dd>
+
+        <dd>Maior que &gt;</dd>
+
+        <dd>Menor ou igual a &lt;=</dd>
+
+        <dd>Maior ou igual a &gt;=</dd>
+
+        <dd>Igualdade ==</dd>
+
+        <dd>Igualdade estrita ===</dd>
+
+        <dd>Diferença !=</dd>
+
+        <dd>Diferença estrita !==</dd>
+
+</dl>
+
+
+
+<p>Há outros tipos de operadores, mas ficam a sua disposição e curiosidade pesquisá-los</p>
+
+</div>
+
+
+
+<div>
+
+        <h4>Condicionais</h4>
+
+        <p>Condições com base naquilo que você quer que o programa tenha um norte conforme eventos vão acontecendo. Abaixo há um exemplo das condicionais IF/ELSE e SWITCH.</p>
+
+<p><b>condição if (se), e else (senão)</b></p>
+
+
+
+<pre>
+
+<code>
+
+// Solicita a idade do usuário
+
+let idade = prompt("Digite sua idade: ");
+
+
+
+// Converte o valor digitado para número
+
+idade = Number(idade);
+
+
+
+// Verifica se é maior ou menor de idade
+
+if (idade >= 18) {
+
+    console.log("Você é maior de idade.");
+
+} else {
+
+    console.log("Você é menor de idade.");
+
+}
+
+</code>
+
+</pre>
+
+
+
+<p><b>Exemplo de condição com senha</b></p>
+
+
+
+<pre>
+
+<code>
+
+//senha de um sistema
+
+let senha = prompt("Digite a senha: ");
+
+
+
+if(senha === "1823"){
+
+    alert("Acesso liberado"); //alert é usado para impressão na tela do navegador.
+
+} else{
+
+    alert("Erro! Senha errada!");
+
+}
+
+</code>
+
+</pre>
+
+<p><b>Switch case define uma condição com base no caso a ser atendido, semelhante ao if/else, mas com algumas mudanças. Cada um serve para aplicações diferentes.</b></p>
+
+
+
+<pre>
+
+<code>
+
+// Solicita o dia da semana
+
+let dia = prompt("Digite um dia da semana: ");
+
+
+
+// Converte para minúsculas para facilitar a comparação
+
+dia = dia.toLowerCase();
+
+
+
+switch (dia) {
+
+    case "segunda":
+    case "terça":
+    case "terca":
+    case "quarta":
+    case "quinta":
+    case "sexta":
+
+        console.log("É um dia útil da semana.");
+
+        break; // Corta a condição, encerrando-a
+
+    
+
+    case "sábado":
+    case "sabado":
+    case "domingo":
+
+        console.log("É fim de semana.");
+
+        break;
+
+
+
+    default: // tratamento para erros
+
+        console.log("Dia inválido.");
+
+}
+
+</code>
+
+</pre>
+
+
+
+<pre>
+
+<code>
+
+// solicita mês
+
+let mes = prompt("Digite o número do mês (1 a 12): ");
+
+
+
+switch (mes) {
+
+    case "12":
+    case "1":
+    case "2":
+
+        console.log("Verão");
+
+        break;
+
+
+
+    case "3":
+    case "4":
+    case "5":
+
+        console.log("Outono");
+
+        break;
+
+
+
+    case "6":
+    case "7":
+    case "8":
+
+        console.log("Inverno");
+
+        break;
+
+
+
+    case "9":
+    case "10":
+    case "11":
+
+        console.log("Primavera");
+
+        break;
+
+
+
+    default:
+
+        console.log("Mês inválido");
+
+}
+
+</code>
+
+</pre>
+
+</div>
+
+
+
+<div>
+
+        <h4>Loops</h4>
+
+        <p>Loops são usados para determinadas instruções que se repetem. A seguir veremos 3 exemplos de loops JavaScript e seus usos.</p>
+
+
+
+<p><b>Loop de contagem: usado para repetir instruções com base em uma variável contadora. A seguir um exemplo simples de loop de contagem que exibe os números de 1 a 10 no console.</b></p>
+
+<pre>
+
+<code>
+
+for (let i = 1; i <= 10; i++) {
+
+    console.log(i);
+
+}
+
+</code>
+
+</pre>
+
+
+
+<p><b>Loop com teste no início: repete instruções enquanto uma determinada condição for verdadeira. A seguir um loop com teste no início (while loop), a condição booleana é verificada antes da primeira iteração. Somente se ela for verdadeira o bloco será executado. Portanto, é possível que nenhuma iteração seja realizada.</b></p>
+
+<pre>
+
+<code>
+
+// Imprime números de 1 a 10
+
+
+
+let i = 1; // Inicialização
+
+
+
+while (i <= 10) { // Condição
+
+    console.log(i); // Instrução
+
+    i++; // Incremento
+
+}
+
+</code>
+
+</pre>
+
+
+
+
+
+<p><b>Loop com teste no final: também repete instruções enquanto uma condição for verdadeira, mas verifica a condição após cada execução do bloco. Este loop é chamado de do-while loop, a condição só é verificada após a execução do bloco. Em outras palavras, pelo menos uma iteração sempre será executada, mesmo que a condição já seja falsa no início.</b></p>
+
+<pre>
+
+<code>
+
+// Um loop do-while simples que exibe números de 1 a 10
+
+let i = 1; // Inicialização
+
+
+
+do {
+
+    console.log(i); // Instrução
+
+    i++; // Incremento
+
+} while (i <= 10); // Condição
+
+</code>
+
+</pre>
+
+</div>
+
+
+
+<div>
+
+        <h4>Funções</h4>
+
+        <p>Funções de uma maneira simples e prática é um bloco de código reutilizável projetado para realizar uma determinada função ou tarefa no código, deixando-o mais organizado, limpo e facilita a manutenção. A seguir você verá exemplos de declarações e usos de funções em JavaScript.</p>
+
+
+
+<pre>
+
+<code>
+
+function ImprimirNumeros() { // Imprime números de 1 a 10
+
+    for (let i = 1; i <= 10; i++) {
+
+        console.log(i);
+
+    }
+
+}
+
+</code>
+
+</pre>
+
+
+
+<p><b>Em JavaScript existem as expressões de funções.</b> Nesse caso, você não especifica um nome para a função, tornando-a uma função anônima (anonymous function), e a armazena em uma variável.</p> 
+
+<pre>
+
+<code>
+
+const soma = function(a, b) {
+
+    return a + b;
+
+};
+
+
+
+console.log(soma(2, 3));  // Retorna 5
+
+</code>
+
+</pre>
+
+
+
+<p><b>Chamada de função</b></p>
+
+<pre>
+
+<code>
+
+ImprimirNumeros();
+
+</code>
+
+</pre>
+
+
+
+<p><b>Parâmetros para função</b></p>
+
+<pre>
+
+<code>
+
+function somar(a = 0, b = 0) {
+
+    return a + b;
+
+}
+
+somar(5, 10); // Retorna 15
+
+somar(5); // Retorna 5 (b assume 0)
+
+</code>
+
+</pre>
+
+
+
+<p><b>Funções com retorno</b></p>
+
+<pre>
+
+<code>
+
+function soma(x, y) {
+
+    let result = x + y; // Soma dos 2 parâmetros recebidos
+
+    return result;  // Retorno do resultado
+
+}
+
+
+
+const z = soma(5, 6); // Chamada da função e atribuição do retorno
+
+console.log(z);  // Resultado 11
+
+</code>
+
+</pre>
+
+</div>
+
+        <h4>Objetos</h4>
+
+        <p>Além dos tipos de dados primitivos, o JavaScript também fornece objetos e arrays. Você pode usar objetos para agrupar funcionalidades relacionadas de maneira organizada. Já os arrays funcionam como listas, permitindo armazenar múltiplos valores.</p>
+
+        <p><b>OBJETOS: você pode criar objetos de várias maneiras, mas de maneira simples os objetos possuem propriedades (que armazenam dados) e métodos (funções associadas ao objeto). A seguir um exemplo de objeto livro com suas propriedades e um método. (O objeto é semelhante a uma struct em C)</b></p>
+
+
+
+<pre>
+
+<code>
+
+const livro = {
+
+    titulo: 'JavaScript - The Comprehensive Guide',
+
+    valor: 59.99,
+
+    autor: 'Philip Ackermann',
+
+    isbn: '978-1-4932-2287-2',
+
+
+
+    printDescricao() {
+
+        console.log(`${this.autor}: ${this.titulo}`);
+
+    }
+
+}
+
+
+
+console.log(livro.titulo);
+
+// "JavaScript - The Comprehensive Guide"
+
+
+
+console.log(livro.valor);
+
+// 59.99
+
+
+
+console.log(livro.autor);
+
+// "Philip Ackermann"
+
+
+
+console.log(livro.isbn);
+
+// "978-1-4932-2287-2"
+
+
+
+livro.printDescricao();
+
+// "Philip Ackermann: JavaScript - The Comprehensive Guide"
+
+</code>
+
+</pre>
+
+</div>
+
+
+
+<div>
+
+    <h4>Array</h4>
+
+    <p>Arrays funcionam como listas de valores e, assim como os objetos, podem ser criados de várias formas em JavaScript. Um array é definido usando colchetes []. Os elementos são escritos dentro dos colchetes e separados por vírgulas. Além disso, novos valores podem ser adicionados posteriormente usando o método push().</p>
+
+
+
+<pre>
+
+<code>
+
+// Criando um array com valores iniciais
+
+const nomes = ['João', 'James', 'Peter'];
+
+
+
+// Acessando elementos do array
+
+console.log(nomes[0]); // "João"
+
+console.log(nomes[1]); // "James"
+
+console.log(nomes[2]); // "Peter"
+
+
+
+// Criando um array vazio
+
+const cores = [];
+
+
+
+// Adicionando valores
+
+cores.push('vermelho');
+
+cores.push('verde');
+
+cores.push('azul');
+
+
+
+// Adicionando valores por índice
+
+cores[3] = 'laranja';
+
+cores[4] = 'amarelo';
+
+
+
+console.log(cores);
+
+// ["vermelho", "verde", "azul", "laranja", "amarelo"]
+
+
+
+// Percorrendo um array
+
+for (let i = 0; i < cores.length; i++) {
+
+    console.log(cores[i]);
+
+}
+
+</code>
+
+</pre>
+
+
+
+<p>Há muitos outros métodos além do push() para trabalhar com arrays, por exemplo: concat() adiciona elementos ou outros arrays a um array existente; filter() filtra elementos do array com base em um critério definido por uma função; pop() remove o último elemento do array; sort() ordena os elementos do array, opcionalmente usando uma função de comparação, entre outros.</p>
+
+</div>
+
+
+
+<p><b><strong>Estes são apenas os passos iniciais e básicos da linguagem de programação da web (JavaScript). Se deseja se aprofundar mais em desenvolvimento de outras funcionalidades bem como aprimoramento do aprendizado já absorvido, indico o site W3Schools, mais especificamente a seção JavaScript: <a href="https://www.w3schools.com/js/">W3Schools JavaScript</a>. E se você quer aprender lógica de programação, visite: <a href="https://www.w3schools.com/programming/">Introdução à programação</a>.</strong></b></p>
+
+</body>
+
+</html>
+
